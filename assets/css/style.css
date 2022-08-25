@@ -58,3 +58,13 @@ html {
   overflow: hidden; 
   margin: auto;
 }
+
+.iff-nl-logos {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.iff-nl-logos .x {
+    margin: 0 2.5rem;
+}
