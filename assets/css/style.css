@@ -310,3 +310,12 @@ h1, h2, h3, h4, h5, h6 {
 
     border-radius: 24px;
 }
+
+.mic, .crown, .title, .time {
+    display: flex;
+    align-items: center;
+}
+
+.mic-icon, .clock-icon, .crown-icon {
+    margin-right: 1rem;
+}
