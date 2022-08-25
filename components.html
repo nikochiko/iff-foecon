@@ -1,3 +1,50 @@
+{% macro Session(title, pill_text, mic_text, crown_text, time_text) %}
+<div class="session">
+  <div class="body">
+    <div class="heading">
+      <div class="title">
+        {{ title | upper }}
+      </div>
+      <div class="session-pill">
+        {{ pill_text | upper }}
+      </div>
+    </div>
+    <div class="mic">
+      {{ mic_text }}
+    </div>
+    <div class="crown">
+      {{ crown_text }}
+    </div>
+  </div>
+  <div class="time">
+    {{ time_text }}
+  </div>
+</div>
+{% endmacro %}
+
+
+{% macro NotSession(title, time_text, mic_text=none, bg_red=false) %}
+<div class="not-session">
+  <div class="body {{ 'bg-red' if bg_red }}">
+
+    <div class="title">
+      {{ title | upper }}
+    </div>
+
+    {% if mic_text %}
+    <div class="mic">
+      {{ mic_text }}
+    </div>
+    {% endif %}
+
+  </div>
+  <div class="time">
+    {{ time_text }}
+  </div>
+
+</div>
+{% endmacro %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,7 +65,7 @@
 
           <div>
             <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 16.5714C0 17.5179 0.767857 18.2857 1.71429 18.2857H14.2857C15.2321 18.2857 16 17.5179 16 16.5714V6.85714H0V16.5714ZM2.28571 9.71429C2.28571 9.4 2.54286 9.14286 2.85714 9.14286H6.28571C6.6 9.14286 6.85714 9.4 6.85714 9.71429V13.1429C6.85714 13.4571 6.6 13.7143 6.28571 13.7143H2.85714C2.54286 13.7143 2.28571 13.4571 2.28571 13.1429V9.71429ZM14.2857 2.28571H12.5714V0.571429C12.5714 0.257143 12.3143 0 12 0H10.8571C10.5429 0 10.2857 0.257143 10.2857 0.571429V2.28571H5.71429V0.571429C5.71429 0.257143 5.45714 0 5.14286 0H4C3.68571 0 3.42857 0.257143 3.42857 0.571429V2.28571H1.71429C0.767857 2.28571 0 3.05357 0 4V5.71429H16V4C16 3.05357 15.2321 2.28571 14.2857 2.28571Z" fill="white"/>
+              <path d="M0 16.5714C0 17.5179 0.767857 18.2857 1.71429 18.2857H14.2857C15.2321 18.2857 16 17.5179 16 16.5714V6.85714H0V16.5714ZM2.28571 9.71429C2.28571 9.4 2.54286 9.14286 2.85714 9.14286H6.28571C6.6 9.14286 6.85714 9.4 6.85714 9.71429V13.1429C6.85714 13.4571 6.6 13.7143 6.28571 13.7143H2.85714C2.54286 13.7143 2.28571 13.4571 2.28571 13.1429V9.71429ZM14.2857 2.28571H12.5714V0.571429C12.5714 0.257143 12.3143 0 12 0H10.8571C10.5429 0 10.2857 0.257143 10.2857 0.571429V2.28571H5.71429V0.571429C5.71429 0.257143 5.45714 0 5.14286 0H4C3.68571 0 3.42857 0.257143 3.42857 0.571429V2.28571H1.71429C0.767857 2.28571 0 3.05357 0 4V5.71429H16V4C16 3.05357 15.2321 2.28571 14.2857 2.28571Z" fill="white"/>
             </svg>
           </div>
         </div>
@@ -89,6 +136,27 @@
           </div>
 
         </div>
+      </div>
+
+      <div class="schedule-body">
+
+        <h2 class="date-heading fw-500">10th September  ∙  2022</h2>
+
+        {{ NotSession(title="Registartion & Introductions", time_text="11:00 AM - 11:30 AM  ∙  30 minutes") }}
+
+        {{ Session(title="Lessons from the Emergency", pill_text="Session 01", mic_text="Coomey Kapoor & CU Singh", crown_text="Neha Dixit", time_text="11:30 AM - 12:20 PM  ∙  50 minutes") }}
+
+        {{ Session(title="Lessons in Security Law", pill_text="SESSION 02", mic_text="Vrinda Grover &amp; Aniruddha Bahal", crown_text="Vakasha Sachdev", time_text="12:30 PM - 1:20 PM • 50 minutes") }}
+
+        {{ NotSession(title="Lunch / Break", time_text="01:20 PM - 02:30 PM • 1 hour 10 minutes") }}
+
+        {{ Session(title="Court Stories", pill_text="SESSION 03", mic_text="Rebecca John, Prateek Sinha &amp; Sonam Gupta", crown_text="Abhinandan Sekhri", time_text="02:45 PM - 03:35 PM • 50 minutes") }}
+
+        {{ NotSession(title="Standup Comedy", time_text="03:45 PM - 04:45 PM • 1 hour", mic_text="TBA", bg_red=true) }}
+
+        {{ NotSession(title="Closing Remarks", time_text="04:50 PM - 05:00 PM • 10 minutes", mic_text="TBA") }}
+
+        {{ NotSession(title="HIGH TEA", time_text="5:00 PM - 6:00 PM • 1 hour") }}
 
       </div>
 
@@ -183,9 +251,9 @@
                 </defs>
 
                 <foreignObject width="100%" height="100%">
-                  <div class="red-button-body">
-                    <h3 class="text-white fw-600">CLICK HERE TO REGISTER</h3>
-                  </div>
+                <div class="red-button-body">
+                  <h3 class="text-white fw-600">CLICK HERE TO REGISTER</h3>
+                </div>
                 </foreignObject>
               </svg>
             </div>
