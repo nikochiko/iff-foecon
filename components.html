@@ -10,7 +10,7 @@
 </svg>
 {%- endmacro %}
 
-{% macro Session(title, pill_text, mic_text, crown_text, time_text) %}
+{% macro Session(title, pill_text, mic_text, crown_text, time_text, image=none) %}
 <div class="session">
   <div class="body">
     <div class="heading">
@@ -21,11 +21,20 @@
         {{ pill_text | upper }}
       </div>
     </div>
-    <div class="mic">
-      {{ MicIcon() }} {{ mic_text }}
-    </div>
-    <div class="crown">
-      {{ CrownIcon() }} {{ crown_text }}
+    <div class="inner-body">
+      <div class="who">
+        <div class="mic">
+          {{ MicIcon() }} {{ mic_text }}
+        </div>
+        <div class="crown">
+          {{ CrownIcon() }} {{ crown_text }}
+        </div>
+      </div>
+      <div class="picture">
+        {% if image %}
+        <img src="{{ image }}" />
+        {% endif %}
+      </div>
     </div>
   </div>
   <div class="time">
@@ -148,7 +157,7 @@
               Su
             </div>
             <div class="date">
-              12
+              11
             </div>
           </div>
 
@@ -161,13 +170,13 @@
 
         {{ NotSession(title="Registartion & Introductions", time_text="11:00 AM - 11:30 AM  ∙  30 minutes") }}
 
-        {{ Session(title="Lessons from the Emergency", pill_text="Session 01", mic_text="Coomey Kapoor & CU Singh", crown_text="Neha Dixit", time_text="11:30 AM - 12:20 PM  ∙  50 minutes") }}
+        {{ Session(title="Lessons from the Emergency", pill_text="Session 01", mic_text="Coomey Kapoor & CU Singh", crown_text="Neha Dixit", time_text="11:30 AM - 12:20 PM  ∙  50 minutes", image="assets/img/session_1.png") }}
 
-        {{ Session(title="Lessons in Security Law", pill_text="SESSION 02", mic_text="Vrinda Grover &amp; Aniruddha Bahal", crown_text="Vakasha Sachdev", time_text="12:30 PM - 1:20 PM • 50 minutes") }}
+        {{ Session(title="Lessons in Security Law", pill_text="SESSION 02", mic_text="Vrinda Grover &amp; Aniruddha Bahal", crown_text="Vakasha Sachdev", time_text="12:30 PM - 1:20 PM • 50 minutes", image="assets/img/session_2.png") }}
 
         {{ NotSession(title="Lunch / Break", time_text="01:20 PM - 02:30 PM • 1 hour 10 minutes") }}
 
-        {{ Session(title="Court Stories", pill_text="SESSION 03", mic_text="Rebecca John, Prateek Sinha &amp; Sonam Gupta", crown_text="Abhinandan Sekhri", time_text="02:45 PM - 03:35 PM • 50 minutes") }}
+        {{ Session(title="Court Stories", pill_text="SESSION 03", mic_text="Rebecca John, Prateek Sinha &amp; Sonam Gupta", crown_text="Abhinandan Sekhri", time_text="02:45 PM - 03:35 PM • 50 minutes", image="assets/img/session_3.png") }}
 
         {{ NotSession(title="Standup Comedy", time_text="03:45 PM - 04:45 PM • 1 hour", mic_text="TBA", bg_red=true) }}
 
