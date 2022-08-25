@@ -24,6 +24,10 @@ html {
     font-family: sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
 .text-white {
     color: var(--white);
 }
@@ -56,10 +60,42 @@ html {
     background-color: var(--black);
 }
 
+.fw-500 {
+    font-weight: 500;
+}
+
 .black-chatbox {
     width: 70%;
     max-width: 737px;
     min-width: 368px;
+}
+
+.black-chatbox-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+.black-chatbox-header {
+    display: flex;
+}
+
+.black-chatbox-header .header-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.black-chatbox-header .header-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 0.75rem;
 }
 
 .container {
