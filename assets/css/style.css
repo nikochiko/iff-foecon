@@ -11,10 +11,17 @@
 }
 
 @font-face {
-  font-family: "Lato";
-  src: url("assets/fonts/Lato-Bold.woff2") format("woff2"),
-       url("assets/fonts/Lato-Bold.woff") format("woff");
-  font-weight: bold;
+    font-family: "Jost";
+    src: url("/assets/fonts/Jost.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 200 900;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("/assets/fonts/Lato-Bold.woff2") format("woff2"),
+         url("/assets/fonts/Lato-Bold.woff") format("woff");
+    font-weight: bold;
 }
 
 * {
@@ -23,7 +30,7 @@
 
 html {
     /* fonts and base changes go here */
-    font-family: sans-serif;
+    font-family: "Jost", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -84,6 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .black-chatbox-header {
     display: flex;
+    flex: 100%;
 }
 
 .black-chatbox-header .header-left {
@@ -99,11 +107,14 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 0.75rem;
 }
 
+.black-chatbox-footer {
+}
+
 .container {
-  width: 100%;
-  max-width: 1270px;
-  overflow: hidden; 
-  margin: auto;
+    width: 100%;
+    max-width: 1270px;
+    overflow: hidden; 
+    margin: auto;
 }
 
 .iff-nl-logos {
@@ -140,4 +151,12 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Lato", sans-serif;
     font-weight: bold;
     color: var(--partners-section-text-color);
+}
+
+.red-button-body {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    padding: 1.5rem;
 }
