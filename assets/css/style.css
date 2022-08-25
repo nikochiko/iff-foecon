@@ -210,7 +210,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
 
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
 }
 
 .schedule-header .week-grid .cell .date {
