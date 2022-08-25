@@ -7,6 +7,11 @@
     --partners-section-bg-color: #E8E8E8;
     --partners-section-text-color: #A3A3A3;
 
+    --schedule-phone-background-color: #343434;
+
+    --week-grid-background-color: #343434;
+    --week-grid-text-color: #A3A3A3;
+
     --black-chatbox-max-width: 737px;
 }
 
@@ -159,4 +164,56 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 
     padding: 1.5rem;
+}
+
+.schedule-phone {
+    width: 530px;
+    height: 100vh;
+
+    background-color: var(--schedule-phone-background-color);
+    padding: 1rem;
+}
+
+.schedule-header {
+    background-color: var(--black);
+    color: var(--white);
+
+    padding: 2rem;
+}
+
+.schedule-header .schedule-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.schedule-header .week-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    column-gap: 0.5rem;
+
+    margin-top: 2rem;
+}
+
+.schedule-header .week-grid .cell {
+    padding: 1rem;
+
+    background-color: var(--week-grid-background-color);
+    color: var(--week-grid-text-color);
+}
+
+.schedule-header .week-grid .cell.active {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.schedule-header .week-grid .cell .day {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 0.25rem;
+}
+
+.schedule-header .week-grid .cell .date {
+    display: flex;
+    justify-content: center;
 }
