@@ -46,6 +46,12 @@ html {
     background-color: var(--black);
 }
 
+.black-chatbox {
+    width: 70%;
+    max-width: 737px;
+    min-width: 368px;
+}
+
 .container {
   width: 100%;
   max-width: 920px;
