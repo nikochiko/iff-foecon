@@ -1,5 +1,8 @@
 :root {
-    /* colors go here */
+    --white: #FFFFFF;
+    --red: #EC2228;
+    --dark-gray: #606161;
+    --black: #171717;
 }
 
 * {
@@ -8,5 +11,44 @@
 
 html {
     /* fonts and base changes go here */
-    /* font-family: ... */
+    font-family: sans-serif;
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-red {
+    color: var(--red);
+}
+
+.text-black {
+    color: var(--black);
+}
+
+.text-dark-gray {
+    color: var(--dark-gray);
+}
+
+.bg-white {
+    background-color: var(--white);
+}
+
+.bg-red {
+    background-color: var(--red);
+}
+
+.bg-dark-gray {
+    background-color: var(--dark-gray);
+}
+
+.bg-black {
+    background-color: var(--black);
+}
+
+.container {
+  width: 100%;
+  max-width: 920px;
+  overflow: hidden; 
+  margin: auto;
 }
